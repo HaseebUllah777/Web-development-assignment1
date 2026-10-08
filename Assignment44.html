@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Web Technologies</title>
+
+    <style>
+        /* ===== COLOR SCHEME (change colors here only) ===== */
+        
+         :root {
+            --dark: #0f2a24;
+            --mid: #1b5e4f;
+            --light: #2f8f6b;
+            --accent: #e0a526;
+            --accent-dark: #b97d0a;
+            --button: #1b8f73;
+            --page-bg: #f1f6f2;
+            --text: #14211d;
+            --row-hover: #eaf5ee;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+        }
+        
+        body {
+            padding-top: env(safe-area-inset-top, 0px);
+            font-family: Arial, sans-serif;
+            background: var(--page-bg);
+            color: var(--text);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--mid), var(--light));
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 18px;
+        }
+        
+        .student {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+            border-left: 6px solid var(--accent);
+        }
+        
+        .student h2 {
+            color: var(--mid);
+            margin-bottom: 15px;
+        }
+        
+        .student p {
+            margin: 8px 0;
+            font-size: 17px;
+        }
+        
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 30px auto 60px;
+        }
+        
+        .container h2 {
+            text-align: center;
+            color: var(--mid);
+            margin-bottom: 20px;
+        }
+        
+        .table-box {
+            background: white;
+            padding: 20px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--mid), var(--light));
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        tr:hover {
+            background: var(--row-hover);
+        }
+        
+        .lecture-link {
+            display: inline-block;
+            background: var(--button);
+            color: white;
+            padding: 9px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .lecture-link:hover {
+            background: var(--accent-dark);
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        @media(max-width:700px) {
+            header h1 {
+                font-size: 30px;
+            }
+            th,
+            td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Web Technologies</h1>
+
+        <p>Software Engineering</p>
+
+    </header>
+
+
+    <div class="student">
+
+        <h2>Student Information</h2>
+
+        <p><b>Name:</b> Haseeb Ullah Nasir</p>
+
+        <p><b>Registration No:</b> FA24-BSE-044</p>
+
+        <p><b>Course:</b> Web Technologies</p>
+
+    </div>
+
+
+    <div class="container">
+
+        <h2>Web Technologies Lectures</h2>
+
+        <div class="table-box">
+
+            <table>
+
+                <tr>
+                    <th>Lecture No.</th>
+                    <th>Lecture Title</th>
+                    <th>Open Lecture</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Course Introduction & The Web</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(1); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Web Vocabulary, Standards & Architecture</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(2); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>HTML & HTML5 Fundamentals</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(3); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>HTML Content, Tables, Lists & Forms</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(4); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>CSS Syntax & Selectors</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(5); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>CSS Box Model, Backgrounds & Display</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(6); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td>Positioning, z-index, Floats & Visual Effects</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(7); return false;">Open</a></td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td>Transforms, Animations, Fonts, Variables & Media Queries</td>
+                    <td><a href="#" class="lecture-link" onclick="openLecture(8); return false;">Open</a></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>Web Technologies | Haseeb ullah Nasir</p>
+
+    </footer>
+
+
+    <script>
+        /* Lecture viewer: opens the lecture in a full-screen layer on this page */
+
+        function closeLecture() {
+            var v = document.getElementById("lectureView");
+            if (v) {
+                v.remove();
+            }
+            document.body.style.overflow = "";
+        }
+
+        function showLecture(html) {
+            closeLecture();
+            var v = document.createElement("div");
+            v.id = "lectureView";
+            v.style.cssText = "position:fixed;inset:0;z-index:1000;background:#0f2a24;";
+            var bar = document.createElement("button");
+            bar.textContent = "Close";
+            bar.onclick = closeLecture;
+            bar.style.cssText = "position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:14px;z-index:2;padding:8px 16px;border:0;border-radius:8px;background:#e0a526;color:#14211d;font-weight:bold;cursor:pointer;";
+            var f = document.createElement("iframe");
+            f.style.cssText = "width:100%;height:100%;border:0;";
+            f.srcdoc = html;
+            v.appendChild(bar);
+            v.appendChild(f);
+            document.body.appendChild(v);
+            document.body.style.overflow = "hidden";
+        }
+
+        function openLecture(number) {
+
+            var content = "";
+
+
+            /* ================= Lecture 1 ================= */
+
+            if (number == 1) {
+
+                content = `<h1>Lecture 1: Course Introduction & The Web</h1>
+<h2>Course</h2><ul>
+<li>CSC336 Web Technologies; credit hours 2+1.</li>
+<li>Topics include web architecture, HTML, CSS, JavaScript, server-side technologies, databases, APIs, security and deployment.</li>
+</ul>
+<h2>Learning Outcomes</h2><ul>
+<li>Understand web architectures and applications.</li><li>Understand server-side technologies and databases.</li>
+<li>Build front-end interfaces using web technologies.</li><li>Apply markup and client-side technologies.</li>
+</ul>
+<h2>Internet vs Web</h2><ul>
+<li><b>Internet:</b> global network infrastructure.</li><li><b>Web:</b> interlinked pages and applications running on the Internet.</li>
+<li>Memory: Internet = roads/network; Web = services/content.</li></ul>
+<h2>Web Platforms</h2><ul>
+<li>Include servers, databases, development tools, user interfaces, APIs and security.</li>
+<li>Examples: social media, e-commerce, CMS and cloud platforms.</li></ul>
+<h2>Website & Hosting</h2><ul>
+<li>A website is a collection of related web pages.</li><li>A web server stores and delivers pages to users.</li>
+<li>Publishing means uploading files to a server. FTP can be used for file transfer.</li>
+<li>A browser retrieves and displays web pages.</li></ul>
+<h2>Client-Server Model</h2><ol><li>Browser sends an HTTP request.</li><li>Server processes it and sends an HTTP response.</li><li>Browser renders the page.</li></ol>`;
+
+            }
+
+
+            /* ================= Lecture 2 ================= */
+            else if (number == 2) {
+
+                content = `<h1>Lecture 2: Web Vocabulary, Standards & Architecture</h1>
+<h2>URL / URI</h2><ul>
+<li>URL identifies where a resource can be found.</li><li>URI is the broader identifier; every URL is a URI.</li>
+<li>URL parts: scheme, subdomain, domain, port, path, query and fragment.</li></ul>
+<h2>DNS</h2><ul><li>DNS converts domain names such as google.com into IP addresses.</li><li>Think of DNS as the Internet's phone book.</li></ul>
+<h2>HTTP / HTTPS</h2><ul><li><b>HTTP:</b> client-server communication protocol.</li><li><b>HTTPS:</b> HTTP protected by TLS encryption and server authentication.</li>
+<li><b>GET:</b> retrieve; <b>POST:</b> submit; <b>PUT/PATCH:</b> update; <b>DELETE:</b> remove.</li>
+<li><b>2xx:</b> success, <b>3xx:</b> redirect, <b>4xx:</b> client error, <b>5xx:</b> server error.</li></ul>
+<h2>Standards</h2><ul><li><b>W3C:</b> web standards.</li><li><b>WHATWG:</b> maintains HTML as a living standard.</li><li><b>ECMA:</b> ECMAScript/JavaScript standards.</li><li><b>IETF:</b> Internet standards.</li></ul>
+<h2>Web Application Types</h2><ul><li><b>Static:</b> prebuilt files.</li><li><b>Dynamic:</b> content generated using data/server processing.</li><li><b>MPA:</b> multiple pages.</li><li><b>SPA:</b> one main page with dynamic views.</li><li><b>PWA:</b> web app with app-like features.</li></ul>
+<h2>Web Architecture</h2><ul><li><b>One-tier:</b> UI, logic and data together.</li><li><b>Two-tier:</b> client communicates with server/database.</li><li><b>Three/N-tier:</b> presentation, application logic and data are separated.</li>
+<li>Separation of concerns improves maintainability and scalability.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 3 ================= */
+            else if (number == 3) {
+
+                content = `<h1>Lecture 3: HTML & HTML5 Fundamentals</h1>
+<h2>HTML, CSS and JavaScript</h2><ul><li><b>HTML:</b> structure and meaning.</li><li><b>CSS:</b> presentation and layout.</li><li><b>JavaScript:</b> behavior and dynamic updates.</li></ul>
+<h2>HTML</h2><ul><li>HTML means HyperText Markup Language and defines web content structure.</li><li>It uses tags inside angle brackets.</li><li>HTML is a markup language, not a programming language.</li></ul>
+<h2>Basic Structure</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h2>Tag, Element, Attribute</h2><ul><li><b>Tag:</b> &lt;p&gt;.</li><li><b>Element:</b> &lt;p&gt;Hello&lt;/p&gt;.</li><li><b>Attribute:</b> extra information such as class or href.</li><li>Nesting should close in reverse order.</li></ul>
+<h2>HTML5 Features</h2><ul><li>Responsive design and viewport support.</li><li>Audio and video without plugins.</li><li>Canvas for graphics.</li><li>New input types such as email, date and tel.</li><li>localStorage/sessionStorage and semantic elements.</li></ul>
+<h2>Block & Inline</h2><ul><li><b>Block:</b> starts on a new line, e.g. div, p, h1.</li><li><b>Inline:</b> stays in the line, e.g. span, a, strong.</li></ul>
+<h2>Semantic HTML</h2><ul><li>Semantic elements describe meaning: header, nav, main, section, article, aside, footer.</li><li>Benefits: accessibility, SEO and easier maintenance.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 4 ================= */
+            else if (number == 4) {
+
+                content = `<h1>Lecture 4: HTML Content, Tables, Lists & Forms</h1>
+<h2>Headings & Formatting</h2><ul><li>h1–h6 create a content hierarchy.</li><li>strong = importance, em = emphasis, mark = highlight.</li><li>br = line break, hr = horizontal line.</li></ul>
+<h2>Links & Images</h2><ul><li><b>Absolute:</b> full URL; <b>relative:</b> local path; <b>fragment:</b> section of same page.</li><li>Images use src for location and alt for accessibility.</li></ul>
+<h2>Lists</h2><ul><li><b>ul:</b> unordered list.</li><li><b>ol:</b> ordered list.</li><li><b>li:</b> list item.</li><li><b>dl/dt/dd:</b> description list.</li></ul>
+<h2>Tables</h2><pre><code>&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre><ul><li>Use tables for tabular data, not page layout.</li><li><b>colspan</b> merges columns; <b>rowspan</b> merges rows.</li></ul>
+<h2>Forms</h2><ul><li>form collects user input.</li><li><b>GET:</b> data in URL; <b>POST:</b> data in request body.</li><li>Common controls: text, email, password, number, date, checkbox, radio, select, textarea and button.</li><li><b>name</b> identifies submitted data; <b>label</b> improves usability.</li></ul>
+<h2>Validation & Accessibility</h2><ul><li>required, pattern, min and max provide client-side validation.</li><li>Server-side validation is still required.</li><li>Use meaningful alt text and connect labels with controls.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 5 ================= */
+            else if (number == 5) {
+
+                content = `<h1>Lecture 5: CSS Syntax & Selectors</h1>
+<h2>CSS</h2><ul><li>CSS controls HTML presentation: color, fonts, spacing, borders and layout.</li><li>HTML = content; CSS = presentation.</li></ul>
+<h2>Syntax</h2><pre><code>p {
+  color: darkblue;
+  font-size: 20px;
+}</code></pre><ul><li><b>Selector:</b> chooses element.</li><li><b>Property:</b> what changes.</li><li><b>Value:</b> how it looks.</li></ul>
+<h2>Types of CSS</h2><ul><li><b>Inline:</b> inside style attribute.</li><li><b>Internal:</b> inside style in the page.</li><li><b>External:</b> separate .css file; best for multiple pages.</li></ul>
+<h2>Selectors</h2><ul><li><b>Element:</b> p</li><li><b>Class:</b> .highlight</li><li><b>ID:</b> #mainTitle</li><li><b>Attribute:</b> input[type="text"]</li><li><b>Universal:</b> *</li><li><b>Grouping:</b> h1, h2, p</li></ul>
+<h2>Combinators</h2><ul><li>Space = descendant; &gt; = child; + = adjacent sibling; ~ = general sibling.</li></ul>
+<h2>Pseudo-classes & Elements</h2><ul><li>Pseudo-class uses <b>:</b> e.g. :hover, :focus, :nth-child().</li><li>Pseudo-element uses <b>::</b> e.g. ::before, ::after, ::first-letter.</li></ul>
+<h2>Cascade & Specificity</h2><ul><li>Browser resolves conflicts using importance, specificity and source order.</li><li>General strength: inline &gt; ID &gt; class/attribute/pseudo-class &gt; element.</li><li>Some properties such as color and font inherit from parents.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 6 ================= */
+            else if (number == 6) {
+
+                content = `<h1>Lecture 6: CSS Box Model, Backgrounds & Display</h1>
+<h2>Colors & Fonts</h2><ul><li>Colors can use names, HEX, RGB and RGBA.</li><li>font-family, font-size, font-weight and font-style control text appearance.</li><li>text-align, text-decoration, text-transform and line-height control text.</li></ul>
+<h2>Backgrounds</h2><ul><li>background-color, background-image, repeat, position and size control backgrounds.</li><li><b>cover</b> makes the image cover the element.</li></ul>
+<h2>Box Model</h2><p>Every element has four layers:</p><ol><li><b>Content</b></li><li><b>Padding</b> – space inside border</li><li><b>Border</b> – visible edge</li><li><b>Margin</b> – space outside border</li></ol>
+<h2>Box Sizing</h2><ul><li><b>content-box:</b> width excludes padding and border.</li><li><b>border-box:</b> width includes padding and border.</li><li>Common rule: <code>* { box-sizing: border-box; }</code></li></ul>
+<h2>Width & Overflow</h2><ul><li>width/height set size; min/max limits size.</li><li>overflow values: visible, hidden, scroll, auto.</li></ul>
+<h2>Display</h2><ul><li><b>block:</b> new line.</li><li><b>inline:</b> same line.</li><li><b>inline-block:</b> same line with width/height.</li><li><b>none:</b> removed from layout.</li></ul>
+<h2>Borders & Shadows</h2><ul><li>border-radius rounds corners.</li><li>box-shadow adds shadow around or inside an element.</li><li>Use consistent spacing with margin, padding and gap.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 7 ================= */
+            else if (number == 7) {
+
+                content = `<h1>Lecture 7: Positioning, z-index, Floats & Visual Effects</h1>
+<h2>Normal Flow</h2><ul><li>Elements normally appear in HTML order.</li><li>Use normal flow, Flexbox or Grid before positioning.</li></ul>
+<h2>Positioning</h2><ul><li><b>static:</b> default.</li><li><b>relative:</b> stays in flow but can move.</li><li><b>absolute:</b> removed from flow and positioned relative to a containing block.</li><li><b>fixed:</b> attached to viewport while scrolling.</li><li><b>sticky:</b> stays in flow then sticks at a scroll position.</li></ul>
+<h2>z-index</h2><ul><li>Controls which overlapping element appears on top.</li><li>Higher z-index appears above lower z-index within the same stacking context.</li><li>Stacking contexts can be created by positioning, opacity, transform and other properties.</li></ul>
+<h2>Floats</h2><ul><li>float moves an element left/right and allows text to wrap around it.</li><li>Flexbox/Grid are preferred for modern layouts.</li><li>clear moves content below floats.</li></ul>
+<h2>Rounded Corners</h2><ul><li><code>border-radius: 50%</code> can make a circle when width and height are equal.</li><li>Four radius values follow clockwise order.</li></ul>
+<h2>Gradients</h2><ul><li><b>linear-gradient:</b> follows a line.</li><li><b>radial-gradient:</b> spreads from a center.</li><li>Use readable contrast when placing text over gradients/images.</li></ul>
+<h2>Opacity & Shadow</h2><ul><li>opacity makes the whole element transparent.</li><li>rgba() can make only a color transparent.</li><li>box-shadow adds soft visual depth.</li></ul>`;
+
+            }
+
+
+            /* ================= Lecture 8 ================= */
+            else if (number == 8) {
+
+                content = `<h1>Lecture 8: Transforms, Animations, Fonts, Variables & Media Queries</h1>
+<h2>CSS Transforms</h2><ul><li>transform changes visual position, size or rotation without changing normal flow.</li><li><b>translate:</b> move; <b>rotate:</b> turn; <b>scale:</b> resize; <b>skew:</b> slant.</li><li>transform-origin sets the transformation point.</li></ul>
+<h2>Transitions</h2><ul><li>transition creates smooth changes between property values.</li><li>Common properties: transition-property, duration, timing-function and delay.</li></ul>
+<h2>Animations</h2><ul><li>@keyframes defines animation steps.</li><li>animation controls name, duration, timing, delay, iteration and direction.</li></ul>
+<h2>Web Fonts</h2><ul><li>Use font-family with fallback fonts.</li><li>@font-face allows custom web fonts.</li></ul>
+<h2>CSS Variables</h2><pre><code>:root { --main-color: #1b5e4f; }
+button { background: var(--main-color); }</code></pre><ul><li>Variables store reusable values and make design changes easier.</li></ul>
+<h2>Media Queries</h2><ul><li>Media queries apply CSS based on screen/device conditions.</li><li>They are important for responsive design.</li><li>Example: <code>@media (max-width: 700px) { ... }</code></li></ul>
+<h2>Responsive Design</h2><ul><li>Design should work on mobile, tablet and desktop.</li><li>Use flexible widths, responsive images, Flexbox/Grid and media queries.</li></ul>`;
+
+            }
+
+
+            showLecture(`
+
+    <!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+    <title>Lecture ${number}</title>
+
+    <style>
+
+    /* Same color scheme as the main page */
+
+    :root{
+        --dark:#0f2a24;
+        --mid:#1b5e4f;
+        --light:#2f8f6b;
+        --accent:#e0a526;
+        --accent-dark:#b97d0a;
+        --button:#1b8f73;
+        --text:#14211d;
+        --code-bg:#0f2a24;
+        --code-text:#e8f5ee;
+        --row-hover:#eaf5ee;
+    }
+
+    *{
+        box-sizing:border-box;
+    }
+
+    body{
+        margin:0;
+        font-family:Arial,sans-serif;
+        color:var(--text);
+    }
+
+    .lecture-page{
+        min-height:100vh;
+        background:linear-gradient(
+            135deg,
+            var(--dark),
+            var(--mid),
+            var(--light)
+        );
+        padding:50px 20px;
+    }
+
+    .lecture-card{
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:40px;
+        border-radius:20px;
+        box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    h1{
+        color:var(--mid);
+        margin-bottom:20px;
+    }
+
+    h2{
+        color:var(--mid);
+        margin-top:30px;
+        padding-top:10px;
+        border-top:3px solid var(--accent);
+    }
+
+    h3{
+        color:var(--light);
+        margin-top:18px;
+    }
+
+    p{
+        line-height:1.8;
+        color:#333;
+    }
+
+    ul{
+        margin-left:25px;
+    }
+
+    li{
+        line-height:1.9;
+    }
+
+    pre{
+        background:var(--code-bg);
+        color:var(--code-text);
+        padding:16px;
+        border-radius:10px;
+        overflow-x:auto;
+        margin:12px 0;
+        font-size:14px;
+        line-height:1.6;
+    }
+
+    code{
+        font-family:Consolas,"Courier New",monospace;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+        margin:12px 0;
+        font-size:14px;
+    }
+
+    th{
+        background:var(--mid);
+        color:white;
+        padding:10px;
+        text-align:left;
+    }
+
+    td{
+        padding:10px;
+        border-bottom:1px solid #ddd;
+        text-align:left;
+    }
+
+    tr:hover td{
+        background:var(--row-hover);
+    }
+
+    button{
+        margin-top:30px;
+        padding:12px 25px;
+        border:0;
+        border-radius:8px;
+        background:var(--button);
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:var(--accent-dark);
+    }
+
+    @media(max-width:700px){
+
+        .lecture-card{
+            padding:22px;
+        }
+
+    }
+
+    </style>
+
+    </head>
+
+    <body>
+
+    <div class="lecture-page">
+
+        <div class="lecture-card">
+
+            ${content}
+
+            <button onclick="parent.closeLecture()">
+                Close Lecture
+            </button>
+
+        </div>
+
+    </div>
+
+    </body>
+
+    </html>
+
+    `);
+
+        }
+    </script>
+
+</body>
+
+</html>
